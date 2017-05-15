@@ -112,7 +112,7 @@
     ```
   - **高阶模块命名**: 对于生成一个新的模块，其中的模块名 `displayName` 应该为高阶模块名和传入模块名的组合. 例如, 高阶模块 `withFoo()`, 当传入一个 `Bar` 模块的时候， 生成的模块名 `displayName` 应该为 `withFoo(Bar)`.
 
-  > 为什么？一个模块的 `displayName` 可能会在开发者工具或者错误信息中使用到，因此有一个能清楚的表达这层关系的值能帮助我们更好的理解模块发生了什么，更好的Debug.
+    > 为什么？一个模块的 `displayName` 可能会在开发者工具或者错误信息中使用到，因此有一个能清楚的表达这层关系的值能帮助我们更好的理解模块发生了什么，更好的Debug.
 
     ```jsx
     // bad
@@ -214,7 +214,7 @@
 
 ## Spacing 空格
 
-  - 总是在自动关闭的标签前加一个空格，正常情况下也不需要换行. eslint: [`no-multi-spaces`](http://eslint.org/docs/rules/no-multi-spaces), [`react/jsx-space-before-closing`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-space-before-closing.md)
+  - 总是在自动关闭的标签前加一个空格，正常情况下也不需要换行. eslint: [`no-multi-spaces`](http://eslint.org/docs/rules/no-multi-spaces), [`react/jsx-tag-spacing`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-tag-spacing.md)
 
     ```jsx
     // bad
@@ -273,7 +273,7 @@
     />
     ```
 
-  - `<img>` 标签总是添加 `alt` 属性. 如果图片以presentation(感觉是以类似PPT方式显示?)方式显示，`alt` 可为空, 或者`<img>` 要包含`role="presentation"`. eslint: [`jsx-a11y/img-has-alt`](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/img-has-alt.md)
+  - `<img>` 标签总是添加 `alt` 属性. 如果图片以presentation(感觉是以类似PPT方式显示?)方式显示，`alt` 可为空, 或者`<img>` 要包含`role="presentation"`. eslint: [`jsx-a11y/alt-text`](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/alt-text.md)
 
     ```jsx
     // bad
@@ -344,7 +344,7 @@
     />
   ))}
   ```
-  
+
   - 对于所有非必须的属性，总是手动去定义`defaultProps`属性.
 
   > 为什么? propTypes 可以作为模块的文档说明, 并且声明 defaultProps 的话意味着阅读代码的人不需要去假设一些默认值。更重要的是, 显示的声明默认属性可以让你的模块跳过属性类型的检查.
@@ -361,8 +361,8 @@
   };
 
   // good
-  function SFC({ foo, bar }) {
-    return <div>{foo}{bar}</div>;
+  function SFC({ foo, bar, children }) {
+    return <div>{foo}{bar}{children}</div>;
   }
   SFC.propTypes = {
     foo: PropTypes.number.isRequired,
@@ -478,7 +478,7 @@
       }
 
       render() {
-        return <div onClick={this.onClickDiv.bind(this)} />
+        return <div onClick={this.onClickDiv.bind(this)} />;
       }
     }
 
@@ -495,7 +495,7 @@
       }
 
       render() {
-        return <div onClick={this.onClickDiv} />
+        return <div onClick={this.onClickDiv} />;
       }
     }
     ```
@@ -577,7 +577,7 @@
       }
 
       render() {
-        return <a href={this.props.url} data-id={this.props.id}>{this.props.text}</a>
+        return <a href={this.props.url} data-id={this.props.id}>{this.props.text}</a>;
       }
     }
 
