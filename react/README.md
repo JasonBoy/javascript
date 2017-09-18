@@ -167,7 +167,7 @@
 
 ## Alignment 代码对齐
 
-  - 遵循以下的JSX语法缩进/格式. eslint: [`react/jsx-closing-bracket-location`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-closing-bracket-location.md)
+  - 遵循以下的JSX语法缩进/格式. eslint: [`react/jsx-closing-bracket-location`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-closing-bracket-location.md) [`react/jsx-closing-tag-location`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-closing-tag-location.md)
 
     ```jsx
     // bad
@@ -271,6 +271,9 @@
     <Foo
       hidden
     />
+    
+    // good
+    <Foo hidden />
     ```
 
   - `<img>` 标签总是添加 `alt` 属性. 如果图片以presentation(感觉是以类似PPT方式显示?)方式显示，`alt` 可为空, 或者`<img>` 要包含`role="presentation"`. eslint: [`jsx-a11y/alt-text`](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/alt-text.md)
@@ -559,7 +562,8 @@
   - 如何定义 `propTypes`, `defaultProps`, `contextTypes`, 等等其他属性...
 
     ```jsx
-    import React, { PropTypes } from 'react';
+    import React from 'react';
+    import PropTypes from 'prop-types';
 
     const propTypes = {
       id: PropTypes.number.isRequired,
