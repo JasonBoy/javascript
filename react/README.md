@@ -403,10 +403,9 @@
   }  
   ```    
   
-  -  只有在清楚明白扩展对象时才使用扩展运算符。这非常有用尤其是在使用Mocha测试组件的时候。    
+  -  只有在清楚明白扩展对象时才使用扩展运算符。这非常有用尤其是在使用Mocha测试组件的时候。   
   
-  
-  ```jsx 
+  ```jsx
   export default function Foo {
     const props = {
       text: '',
@@ -417,9 +416,9 @@
   }    
   ```   
   
-  特别提醒：尽可能地筛选出不必要的属性。同时，使用[prop-types-exact](https://www.npmjs.com/package/prop-types-exact)来预防问题出现。   
+  特别提醒：尽可能地筛选出不必要的属性。同时，使用[prop-types-exact](https://www.npmjs.com/package/prop-types-exact)来预防问题出现。  
   
- ```    
+  ```jsx
    //good
   render() {
     const { irrelevantProp, ...relevantProps  } = this.props;
