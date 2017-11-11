@@ -376,11 +376,30 @@
     bar: '',
     children: null,
   };
-  ```
+  ```   
+    - 尽可能少地使用扩展运算符
+
+  > 为什么? 除非你很想传递一些不必要的属性。对于React v15.6.1和更早的版本，你可以[给DOM传递一些无效的HTML属性](https://doc.react-china.org/blog/2017/09/08/dom-attributes-in-react-16.html)
 
 ## Refs
 
-  - 总是在Refs里使用回调函数. eslint: [`react/no-string-refs`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-string-refs.md)
+  - 总是在Refs里使用回调函数. eslint: [`react/no-string-refs`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-string-refs.md)  
+  例外情况：  
+  - 使用了变量提升的高阶组件   
+  ```jsx
+  function HOC(WrappedComponent) {
+    return class Proxy extends React.Component {
+      Proxy.propTypes = {
+        text: PropTypes.string,
+        isLoading: PropTypes.bool
+      };
+
+      render() {
+        return <WrappedComponent {...this.props} />
+      }
+    }
+  }  
+  ```
 
     ```jsx
     // bad
