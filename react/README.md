@@ -379,8 +379,6 @@
     children: null,
   };
   ```     
-  
-  
    - 尽可能少地使用扩展运算符
 
     > 为什么? 除非你很想传递一些不必要的属性。对于React v15.6.1和更早的版本，你可以[给DOM传递一些无效的HTML属性](https://doc.react-china.org/blog/2017/09/08/dom-attributes-in-react-16.html)      
