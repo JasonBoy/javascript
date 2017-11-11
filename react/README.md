@@ -378,13 +378,14 @@
     bar: '',
     children: null,
   };
-  ```    
+  ```     
   
- - 尽可能少地使用扩展运算符
+  
+   - 尽可能少地使用扩展运算符
 
-  > 为什么? 除非你很想传递一些不必要的属性。对于React v15.6.1和更早的版本，你可以[给DOM传递一些无效的HTML属性](https://doc.react-china.org/blog/2017/09/08/dom-attributes-in-react-16.html)      
+    > 为什么? 除非你很想传递一些不必要的属性。对于React v15.6.1和更早的版本，你可以[给DOM传递一些无效的HTML属性](https://doc.react-china.org/blog/2017/09/08/dom-attributes-in-react-16.html)      
   
-   例外情况：  
+    例外情况：  
   - 使用了变量提升的高阶组件   
   ```jsx
   function HOC(WrappedComponent) {
@@ -399,7 +400,36 @@
       }
     }
   }  
-  ```
+  ```     
+  
+  -  只有在清楚明白扩展对象时才使用扩展运算符。这非常有用尤其是在使用Mocha测试组件的时候。    
+  
+  ```jsx 
+  export default function Foo {
+    const props = {
+      text: '',
+      isPublished: false
+    }
+
+    return (<div {...props} />);
+  }    
+  ```     
+  特别提醒：尽可能地筛选出不必要的属性。同时，使用[prop-types-exact](https://www.npmjs.com/package/prop-types-exact)来预防问题出现。   
+  
+ ```    
+   //good
+  render() {
+    const { irrelevantProp, ...relevantProps  } = this.props;
+    return <WrappedComponent {...relevantProps} />
+  }
+
+  //bad
+  render() {
+    const { irrelevantProp, ...relevantProps  } = this.props;
+    return <WrappedComponent {...this.props} />
+  }    
+  ```   
+  
 
 ## Refs
 
