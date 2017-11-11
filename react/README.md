@@ -80,8 +80,10 @@
 
 ## Naming 命名
 
-  - **扩展名**: React模块使用 `.jsx` 扩展名.
-  - **文件名**: 文件名使用帕斯卡命名. 如, `ReservationCard.jsx`.
+  - **扩展名**: React模块使用 `.jsx` 扩展名.   
+  
+  - **文件名**: 文件名使用帕斯卡命名. 如, `ReservationCard.jsx`.     
+  
   - **引用命名**: React模块名使用帕斯卡命名，实例使用骆驼式命名. eslint: [`react/jsx-pascal-case`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-pascal-case.md)
 
     ```jsx
@@ -376,15 +378,13 @@
     bar: '',
     children: null,
   };
-  ```   
-    - 尽可能少地使用扩展运算符
+  ```    
+  
+ - 尽可能少地使用扩展运算符
 
-  > 为什么? 除非你很想传递一些不必要的属性。对于React v15.6.1和更早的版本，你可以[给DOM传递一些无效的HTML属性](https://doc.react-china.org/blog/2017/09/08/dom-attributes-in-react-16.html)
-
-## Refs
-
-  - 总是在Refs里使用回调函数. eslint: [`react/no-string-refs`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-string-refs.md)  
-  例外情况：  
+  > 为什么? 除非你很想传递一些不必要的属性。对于React v15.6.1和更早的版本，你可以[给DOM传递一些无效的HTML属性](https://doc.react-china.org/blog/2017/09/08/dom-attributes-in-react-16.html)      
+  
+   例外情况：  
   - 使用了变量提升的高阶组件   
   ```jsx
   function HOC(WrappedComponent) {
@@ -400,6 +400,10 @@
     }
   }  
   ```
+
+## Refs
+
+  - 总是在Refs里使用回调函数. eslint: [`react/no-string-refs`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-string-refs.md)  
 
     ```jsx
     // bad
