@@ -82,11 +82,11 @@
 
 ## Naming 命名
 
-  - **扩展名**: React模块使用 `.jsx` 扩展名.   
+  - **扩展名**: React模块使用 `.jsx` 扩展名.
   
-  - **文件名**: 文件名使用帕斯卡命名. 如, `ReservationCard.jsx`.     
+  - **文件名**: 文件名使用帕斯卡命名. 如, `ReservationCard.jsx`.
   
-  - **引用命名**: React模块名使用帕斯卡命名，实例使用骆驼式命名. eslint: [`react/jsx-pascal-case`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-pascal-case.md)
+  - **引用命名**: React模块名使用帕斯卡命名，实例使用骆驼式命名. eslint: [`react/jsx-pascal-case`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-pascal-case.md)
 
     ```jsx
     // bad
@@ -140,10 +140,10 @@
       return WithFoo;
     }
     ```
-
+  
   - **属性命名**: 避免使用DOM相关的属性来用作其他的用途。
 
-  > 为什么？对于`style` 和 `className`这样的属性名，我们都会默认它们代表一些特殊的含义，如元素的样式，CSS class的名称。在你的应用中使用这些属性来表示其他的含义会使你的代码更难阅读，更难维护，并且可能会引起bug。
+    > 为什么？对于`style` 和 `className`这样的属性名，我们都会默认它们代表一些特殊的含义，如元素的样式，CSS class的名称。在你的应用中使用这些属性来表示其他的含义会使你的代码更难阅读，更难维护，并且可能会引起bug。
 
     ```jsx
     // bad
@@ -197,10 +197,10 @@
     ```
 
 ## Quotes 单引号还是双引号
-
+  
   - 对于JSX属性值总是使用双引号(`"`), 其他均使用单引号(`'`). eslint: [`jsx-quotes`](http://eslint.org/docs/rules/jsx-quotes)
 
-  > 为什么? HTML属性也是用双引号, 因此JSX的属性也遵循此约定.
+    > 为什么? HTML属性也是用双引号, 因此JSX的属性也遵循此约定.
 
     ```jsx
     // bad
@@ -295,10 +295,10 @@
     // good
     <img src="hello.jpg" role="presentation" />
     ```
-
+  
   - 不要在 `alt` 值里使用如 "image", "photo", or "picture"包括图片含义这样的词， 中文也一样. eslint: [`jsx-a11y/img-redundant-alt`](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/img-redundant-alt.md)
 
-  > 为什么? 屏幕助读器已经把 `img` 标签标注为图片了, 所以没有必要再在 `alt` 里说明了.
+    > 为什么? 屏幕助读器已经把 `img` 标签标注为图片了, 所以没有必要再在 `alt` 里说明了.
 
     ```jsx
     // bad
@@ -525,10 +525,10 @@
       );
     }
     ```
-
+ 
   - 当在 `render()` 里使用事件处理方法时，提前在构造函数里把 `this` 绑定上去. eslint: [`react/jsx-no-bind`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-no-bind.md)
 
-  > 为什么? 在每次 `render` 过程中， 再调用 `bind` 都会新建一个新的函数，浪费资源.
+    > 为什么? 在每次 `render` 过程中， 再调用 `bind` 都会新建一个新的函数，浪费资源.
 
     ```jsx
     // bad
@@ -559,9 +559,10 @@
       }
     }
     ```
-
+ 
   - 在React模块中，不要给所谓的私有函数添加 `_` 前缀，本质上它并不是私有的.
-  > 为什么？`_` 下划线前缀在某些语言中通常被用来表示私有变量或者函数。但是不像其他的一些语言，在JS中没有原生支持所谓的私有变量，所有的变量函数都是共有的。尽管你的意图是使它私有化，在之前加上下划线并不会使这些变量私有化，并且所有的属性（包括有下划线前缀及没有前缀的）都应该被视为是共有的。了解更多详情请查看Issue [#1024](https://github.com/airbnb/javascript/issues/1024), 和 [#490](https://github.com/airbnb/javascript/issues/490) 。
+
+    > 为什么？`_` 下划线前缀在某些语言中通常被用来表示私有变量或者函数。但是不像其他的一些语言，在JS中没有原生支持所谓的私有变量，所有的变量函数都是共有的。尽管你的意图是使它私有化，在之前加上下划线并不会使这些变量私有化，并且所有的属性（包括有下划线前缀及没有前缀的）都应该被视为是共有的。了解更多详情请查看Issue [#1024](https://github.com/airbnb/javascript/issues/1024), 和 [#490](https://github.com/airbnb/javascript/issues/490) 。
 
     ```jsx
     // bad
