@@ -308,7 +308,7 @@
     <img src="hello.jpg" alt="Me waving hello" />
     ```
 
-  - 使用有效正确的 aria `role`属性值 [ARIA roles](https://www.w3.org/TR/wai-aria/roles#role_definitions). eslint: [`jsx-a11y/aria-role`](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/aria-role.md)
+  - 使用有效正确的 aria `role`属性值 [ARIA roles](https://www.w3.org/TR/wai-aria/roles#usage_intro). eslint: [`jsx-a11y/aria-role`](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/aria-role.md)
 
     ```jsx
     // bad - not an ARIA role
@@ -421,13 +421,13 @@
   特别提醒：尽可能地筛选出不必要的属性。同时，使用[prop-types-exact](https://www.npmjs.com/package/prop-types-exact)来预防问题出现。  
   
   ```jsx
-   //good
+  // good
   render() {
     const { irrelevantProp, ...relevantProps  } = this.props;
     return <WrappedComponent {...relevantProps} />
   }
 
-  //bad
+  // bad
   render() {
     const { irrelevantProp, ...relevantProps  } = this.props;
     return <WrappedComponent {...this.props} />
